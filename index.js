@@ -2,6 +2,17 @@ const express = require("express");
 const app = express();
 const {updateAllSignals ,signalCache} = require("./service/signal.js");
 const port = 3000;
+const rateLimit = require("express-rate-limit");
+
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, 
+  max: 20, // limit each IP to 20 requests
+  message: "Too many requests from this IP, please try again later"
+});
+
+// rate limiting to all requests
+app.use(limiter);   
 
 async function runUpdate() {
     try {
