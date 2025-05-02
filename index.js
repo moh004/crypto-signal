@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const {updateAllSignals ,signalCache} = require("./service/signal.js");
+const {updateAllSignals ,signalCache , emojiName} = require("./service/signal.js");
 const port = 3000;
 const rateLimit = require("express-rate-limit");
 
@@ -26,6 +26,15 @@ async function runUpdate() {
 runUpdate()
 setInterval(runUpdate, ( (3 * 60 * 1000) / 4) );
 
+app.get("/symbol" , (req , res) => {
+    
+    try{
+        res.json(emojiName)
+
+    }catch(e){
+        console.log(e)
+    }
+})
 
 app.get("/signal/:symbol" , (req , res) => {
     const SYMBOL = req.params.symbol;

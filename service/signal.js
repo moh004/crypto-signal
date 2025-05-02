@@ -103,7 +103,7 @@ function analyze(candles, symbol) {
 
 
 
-module.exports = {updateAllSignals , signalCache }
+module.exports = {updateAllSignals , signalCache, emojiName }
  
 
 
