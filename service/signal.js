@@ -7,7 +7,7 @@ require("dotenv").config();
 // Configuration
 const SYMBOLS = ["BTCUSDT","ETHUSDT","BNBUSDT","SOLUSDT","XRPUSDT","DOGEUSDT","ADAUSDT","AVAXUSDT","SHIBUSDT","DOTUSDT","TRXUSDT","MATICUSDT","LTCUSDT","BCHUSDT","LINKUSDT","ATOMUSDT","XLMUSDT","UNIUSDT","NEARUSDT",   "ICPUSDT"];
 
-
+console.log(process.env.TEST)
 // Emoji and names
 
 const emojiName = {
